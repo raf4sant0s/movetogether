@@ -1,3 +1,7 @@
+/*Fonte Afacad*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+/*Ajuste geral*/
 * {
     margin: 0;
     padding: 0;
@@ -30,8 +34,7 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  z-index: 0;
-  background-color: #000;
+  background-color: #833DE7;
 }
 
 .banner {
@@ -45,16 +48,37 @@
   pointer-events: none;
 }
 
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90%; /*quanto do degradê aparece pra cima, a altura dele*/
+  background: linear-gradient(to top, #833DE7, transparent 50%); /*a cor e o tanto que vai estar transparente*/
+  z-index: 2;
+}
+
 .banner img {
   width: 100%;
   height: 100%;
 }
 
-.banner1 { animation-delay: 0s; }
-.banner2 { animation-delay: 5s; }
-.banner3 { animation-delay: 10s; }
-.banner4 { animation-delay: 15s; }
-.banner5 { animation-delay: 20s; }
+.banner1 { 
+  animation-delay: 0s; 
+}
+.banner2 { 
+  animation-delay: 5s; 
+}
+.banner3 { 
+  animation-delay: 10s; 
+}
+.banner4 { 
+  animation-delay: 15s; 
+}
+.banner5 { 
+  animation-delay: 20s; 
+}
 
 @keyframes fadeSlide {
   0%, 5%   { opacity: 0; }
@@ -62,23 +86,134 @@
   40%, 100% { opacity: 0; }
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10; 
+  position: absolute;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo2 {
+  display: flex;
+  justify-content: center;
+}
+.logo2 img {
+  width: 16vmax;
+  height: 9vmax;
+}
+
+.slogan {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vmax;
+}
+.slogan h1{
+  font-family: "Afacad", sans-serif;
+  font-size: 1.4vmax;
+  color: #FFD921;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vmax;
+  height: 3.5vmax;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1.3vmax;
+}
+.login-button a {
+  text-decoration: none;
+}
+.login-button:hover {
+  background-color: #833DE7;
+}
+.login-button h1 {
+  font-family: "Afacad", sans-serif;
+  font-size: 1.8vmax;
+  color: #833DE7;
+}
+.login-button:hover h1 {
+  color: #ffffff;
+}
+
+.cadastro-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vmax;
+  height: 3.5vmax;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cadastro-button a{
+  text-decoration: none;
+}
+.cadastro-button:hover {
+  background-color: #833DE7;
+  border: 2px solid #833DE7;
+}
+.cadastro-button h1 {
+  font-family: "Afacad", sans-serif;
+  font-size: 1.8vmax;
+  color: #ffffff;
+}
+.cadastro-button:hover h1 {
+  color: #ffffff;
+}
+
+
+
+
 
 @media (max-width: 768px) {
 
+/*Start*/
 .logo img{
     width: 21vmax;
     height: 21vmax;
 }
+
+/*Page1*/
+.logo2 img {
+  width: 27vmax;
+  height: 15vmax;
 }
 
-@media (max-width: 820px) {
-
-.banner img {
-  width: 200vmax;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  
+.container {
+  top: 73%;
 }
 
+.slogan h1 {
+  font-size: 2.5vmax;
+  margin-bottom: 0.5vmax;
 }
+
+.login-button {
+  width: 36vmax;
+  height: 6.5vmax;
+  margin-bottom: 2vmax;
+}
+.login-button h1 {
+  font-size: 3vmax;
+}
+
+.cadastro-button {
+  width: 36vmax;
+  height: 6.5vmax;
+  border: 3px solid #ffffff;
+}
+.cadastro-button h1 {
+  font-size: 3vmax;
+}
+
+
+
+}/*fim do media*/
