@@ -111,6 +111,9 @@ overlay.addEventListener('click', () => {
 });
 
 
+
+
+
 //NOTIFICAÇÕES
 const btnNotificacoes = document.getElementById('btn-notificacoes');
 const notificacaoLateral = document.getElementById('notificacao-lateral');
@@ -169,4 +172,50 @@ function mostrarMais() {
         botao.textContent = "Ver mais +";
     }
 }
+
+
+
+// ---------------- PESQUISA DO FEED ---------------- //
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search-input");
+    const searchBtn = document.getElementById("search-btn");
+
+    if (!searchInput || !searchBtn) {
+        console.error("Erro: elementos da barra de pesquisa não encontrados.");
+        return;
+    }
+
+    const cards = document.querySelectorAll(".feed-card");
+
+    function pesquisar() {
+        const termo = searchInput.value.toLowerCase().trim();
+
+        cards.forEach(card => {
+            const textoCard = card.innerText.toLowerCase();
+
+            if (textoCard.includes(termo)) {
+                card.style.display = "block";   // ← importante para grid
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    // Clique no botão
+    searchBtn.addEventListener("click", pesquisar);
+
+    // Aperta Enter
+    searchInput.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") pesquisar();
+    });
+
+    // Limpar → mostrar tudo
+    searchInput.addEventListener("input", () => {
+        if (searchInput.value.trim() === "") {
+            cards.forEach(card => card.style.display = "block");
+        }
+    });
+});
+
 

@@ -6,8 +6,77 @@
     <title>MoveTogether - Conversas</title>
     <link rel="stylesheet" href="chat.css">
 </head>
+
 <body>
-    
-    <script src="script.js"></script>
+
+<div class="header">
+    <img src="page1/amigo2.png">
+    <span>Letícia</span>
+</div>
+
+<div class="chat-container" id="chat"></div>
+
+<div class="input-area">
+    <input type="text" id="msgInput" placeholder="Digite uma mensagem...">
+    <button id="sendBtn">Enviar</button>
+</div>
+
+<script>
+    const chat = document.getElementById("chat");
+    const input = document.getElementById("msgInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    // Função para adicionar mensagens na tela
+    function addMsg(texto, tipo) {
+        if (!texto) return;
+        const div = document.createElement("div");
+        div.classList.add("msg", tipo);
+        div.textContent = texto;
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight; // rolar para baixo
+    }
+
+    // Função de resposta do bot
+    function responderBot(msg) {
+        msg = msg.toLowerCase();
+        let resposta = "Não entendi muito bem. Pode repetir? 😊";
+
+        if (msg.includes("oi") || msg.includes("olá")) {
+            resposta = "Oi! Como posso te ajudar hoje? ✨";
+        } else if (msg.includes("viajar")) {
+            resposta = "Amo viagens! Para onde você está pensando em ir? ✈️";
+        } else if (msg.includes("nome")) {
+            resposta = "Sou um mini-chat automático feito só para você! 💜";
+        } else if (msg.includes("tchau")) {
+            resposta = "Tchau! Foi ótimo conversar com você! 👋";
+        }
+
+        addMsg(resposta, "bot");
+    }
+
+    // Função de envio
+    function enviarMsg() {
+        const texto = input.value.trim();
+        if (!texto) return;
+
+        addMsg(texto, "me");
+        input.value = "";
+        input.focus();
+
+        setTimeout(() => responderBot(texto), 500);
+    }
+
+    // Evento do botão
+    sendBtn.addEventListener("click", enviarMsg);
+
+    // Enviar ao pressionar Enter
+    input.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") enviarMsg();
+    });
+
+
+    // Adiciona a conversa inicial
+    conversaInicial.forEach(msg => addMsg(msg.texto, msg.tipo));
+</script>
 </body>
 </html>
