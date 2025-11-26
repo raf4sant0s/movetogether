@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/*Start*/
+/*----------Start----------*/
 
 .fundo {
     display: flex;
@@ -26,7 +26,7 @@
     height: 14vmax;
 }
 
-/*Page 1*/
+/*----------Page 1----------*/
 
 .banner-principal {
   width: 100%;
@@ -169,19 +169,27 @@
   color: #ffffff;
 }
 
+/*----------Login----------*/
 
+.logo3 img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14vmax;
+    height: 14vmax;
+}
 
 
 
 @media (max-width: 768px) {
 
-/*Start*/
+/*----------Start----------*/
 .logo img{
     width: 21vmax;
     height: 21vmax;
 }
 
-/*Page1*/
+/*----------Page1----------*/
 .logo2 img {
   width: 27vmax;
   height: 15vmax;
