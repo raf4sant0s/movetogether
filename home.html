@@ -5,8 +5,305 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoveTogether - Início</title>
     <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    
+   <!-- TOPO -->
+    <header class="topo">
+        <div class="logo">MoveTogether</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Pesquisar">
+        <button><span class="material-icons">search</span></button>
+    </div>
+
+
+    <div class="menu-icones">
+        <a id="btn-notificacoes" class="btn-notify"><span class="material-icons">notifications</span></a>
+        <span class="material-icons">menu</span>
+    </div>
+
+    </header>
+
+    <nav id="menu-lateral" class="menu-fechado">
+        <ul>
+            <li><a href="perfil.html">Perfil</a></li>
+            <li>Explorar</li>
+            <li>Matchs</li>
+            <li>Salvos</li>
+            <li>Comunidade</li>
+            <li>Verificação</li>
+            <li>Configurações</li>
+            <li>Ajuda</li>
+        </ul>
+    </nav>
+
+<!-- Fundo escuro para fechar o menu -->
+<div id="menu-overlay"></div>
+
+
+<!-- Painel lateral de NOTIFICAÇÕES -->
+
+<!-- Overlay (fundo escuro) -->
+<div id="notificacao-overlay" class="overlay"></div>
+
+
+<div id="notificacao-lateral" class="notificacao-lateral">
+
+    <h2>Notificações</h2>
+
+    <div class="notification">
+        <strong>leti_pinheiros</strong> e <strong>paulo_rodrigues</strong> curtiram seu story.
+        <span class="time">2h</span>
+    </div>
+
+    <div class="notification">
+        Confira pessoas que estão planejando viajar para o mesmo destino.
+        <span class="time">5h</span>
+    </div>
+
+    <div class="notification">
+        <strong>amanda_lis</strong> começou a seguir você.
+        <span class="time">8h</span>
+    </div>
+
+    <h2>Ontem</h2>
+
+    <div class="notification">
+        <strong>julia_silva</strong> está planejando ir para a Alemanha no mesmo período que você.
+        <span class="time">16h</span>
+    </div>
+
+    <div class="notification">
+        <strong>auror_a</strong> solicitou marcar uma viagem com você.
+        <span class="time">20h</span>
+    </div>
+
+</div>
+
+
+
+    <!-- PERFIS -->
+    <section class="perfils">
+
+    <div class="icons">
+        <div class="icon">
+            <img src="page1/eu.png">
+            <p style="color: #833DE7;">Seu story</p>
+        </div>
+
+        <div class="icon">
+            <a href="story.html"><img src="page1/amigo1.png"></a>
+            <p>Paulo</p>
+        </div>
+
+        <div class="icon">
+            <img src="page1/amigo2.png">
+            <p>Letícia</p>
+        </div>
+
+        <div class="icon">
+            <img src="page1/amigo3.png">
+            <p>Amanda</p>
+        </div>
+
+        <div class="icon">
+            <img src="page1/amigo4.png">
+            <p>Roberto</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=6">
+            <p>Alex</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=7">
+            <p>Marcos</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=8">
+            <p>Erik</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=9">
+            <p>Âmabar</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=10">
+            <p>Bianca</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=11">
+            <p>Ricardo</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=12">
+            <p>Jack</p>
+        </div>
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/70?img=13">
+            <p>Woodie</p>
+        </div>
+    </div>
+
+    </section>
+
+    <!-- CATEGORIAS DE BLOCOS -->
+    <div class="categoria"><h3>Categorias</h3></div>
+    <section class="cat-cards">
+    
+    <div class="cat">
+        <img src="https://cdn-icons-png.flaticon.com/512/3222/3222691.png" alt="praia">
+        <p>Praia</p>
+    </div>
+
+    <div class="cat">
+        <img src="https://cdn-icons-png.flaticon.com/512/2830/2830302.png" alt="montanhas">
+        <p>Montanhas</p>
+    </div>
+
+    <div class="cat">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="cidade">
+        <p>Cidade</p>
+    </div>
+
+    <div class="cat">
+        <img src="https://cdn-icons-png.flaticon.com/512/3069/3069172.png" alt="aventura">
+        <p>Aventura</p>
+    </div>
+
+</section>
+
+
+<!-- DESTAQUES -->
+<div class="categoria"><h3>Destaques</h3></div>
+
+<section class="cards-feed">
+
+    <!-- CARD 1 -->
+    <div class="feed-card">
+        <img src="page1/card1.png">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo2.png">
+                <div>
+                    <h4>Letícia Pinheiros • 25 anos</h4>
+                    <p>@leti_pinheiros</p>
+                </div>
+            </div>
+
+            <p class="descricao">
+                Viajando para a Suíça! Vai ser top demais! ✈️🌎  
+                #viagem #moveTogether
+            </p>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feed-card">
+        <img src="page1/card2.png">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo1.png">
+                <div>
+                    <h4>Paulo Rodrigues • 22 anos</h4>
+                    <p>@paulo_rdg</p>
+                </div>
+            </div>
+
+            <p class="descricao">
+               Com a amiga escalando neve! ❄️🧗  
+               #aventura #neve #MoveTogether
+            </p>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feed-card">
+        <img src="page1/card3.png">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo4.png">
+                <div>
+                    <h4>Fernando Dias • 35 anos</h4>
+                    <p>@fer_dias</p>
+                </div>
+            </div>
+
+            <p class="descricao">
+                Fazendo trilha na montanha com o pessoal! ⛰️🔥  
+                Quem topa vir na próxima?
+            </p>
+        </div>
+    </div>
+    <!-- CARDS ESCONDIDOS -->
+
+    <div class="feed-card hidden">
+        <img src="page1/card4.jpg">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo3.png">
+                <div>
+                    <h4>Ana Moreira • 28 anos</h4>
+                    <p>@ana.mr</p>
+                </div>
+            </div>
+            <p class="descricao">
+                Primeiro mochilão solo! ✨🗺️  
+                Uma experiência surreal!
+            </p>
+        </div>
+    </div>
+
+    <div class="feed-card hidden">
+        <img src="page1/card5.jpg">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo5.webp">
+                <div>
+                    <h4>João Martins • 30 anos</h4>
+                    <p>@jm_trips</p>
+                </div>
+            </div>
+            <p class="descricao">
+                Acampando pela primeira vez! ⛺🔥  
+                Natureza cura tudo.
+            </p>
+        </div>
+    </div>
+
+    <div class="feed-card hidden">
+        <img src="page1/card6.jpg">
+        <div class="feed-info">
+            <div class="user">
+                <img src="page1/amigo6.jpg">
+                <div>
+                    <h4>Clara Teles • 21 anos</h4>
+                    <p>@cl_teles</p>
+                </div>
+            </div>
+            <p class="descricao">
+                Curtindo o litoral com amigos 🌴🌊  
+                Só vibes boas!
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<div class="ver-mais" onclick="mostrarMais()">Ver mais +</div>
+
+<section class="barra">
+    <p>®2025 MoveTogether. Todos os direitos reservados.</p>
+</section>
     
     <script src="script.js"></script>
 </body>

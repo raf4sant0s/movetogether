@@ -78,3 +78,95 @@ if (document.title.includes("Login")) {
     });
 }
 
+
+//----------Home------------ 
+
+
+
+// Efeito de elevar os cards de categoria
+document.querySelectorAll('.cat').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-5px)';
+    });
+
+    card.addEventListener('mouseout', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});
+
+// Abrir e fechar menu lateral
+const menuBtn = document.querySelector('.menu-icones .material-icons:nth-child(2)');
+const menuLateral = document.getElementById('menu-lateral');
+const overlay = document.getElementById('menu-overlay');
+
+menuBtn.addEventListener('click', () => {
+    menuLateral.classList.toggle('menu-aberto');
+    overlay.classList.toggle('ativo');
+});
+
+// Clicar fora fecha o menu
+overlay.addEventListener('click', () => {
+    menuLateral.classList.remove('menu-aberto');
+    overlay.classList.remove('ativo');
+});
+
+
+//NOTIFICAÇÕES
+const btnNotificacoes = document.getElementById('btn-notificacoes');
+const notificacaoLateral = document.getElementById('notificacao-lateral');
+const overlayNotificacao = document.getElementById('notificacao-overlay');
+
+// Abrir / Fechar painel
+btnNotificacoes.addEventListener('click', () => {
+    notificacaoLateral.classList.toggle('aberta');
+    overlayNotificacao.classList.toggle('ativo');
+});
+
+// Clicar fora fecha
+overlayNotificacao.addEventListener('click', () => {
+    notificacaoLateral.classList.remove('aberta');
+    overlayNotificacao.classList.remove('ativo');
+});
+
+
+
+//CARDS 
+// Efeito hover nos cards do feed
+document.querySelectorAll('.feed-card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = "translateY(-6px)";
+    });
+
+    card.addEventListener('mouseout', () => {
+        card.style.transform = "translateY(0)";
+    });
+});
+
+
+
+//MOSTRAR MAIS
+
+function mostrarMais() {
+    const cardsExtras = document.querySelectorAll(".feed-card.hidden");
+    const botao = document.querySelector(".ver-mais");
+
+    // Se ainda existem cards escondidos → mostrar tudo
+    if (cardsExtras.length > 0) {
+        document.querySelectorAll(".feed-card").forEach(card => {
+            card.classList.remove("hidden");
+        });
+        botao.textContent = "Ver menos -";
+    }
+    // Se NÃO existem cards escondidos → esconder os extras
+    else {
+        const todosCards = document.querySelectorAll(".feed-card");
+
+        // mantém apenas os 3 primeiros visíveis
+        todosCards.forEach((card, index) => {
+            if (index > 2) card.classList.add("hidden");
+        });
+
+        botao.textContent = "Ver mais +";
+    }
+}
+

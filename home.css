@@ -1,0 +1,408 @@
+/*Fonte da logo*/
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
+
+/*Ajuste geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* CORES DO TEMA  cabeçalho*/
+:root {
+    --roxo: #7b2cff;
+    --claro: #f2f2f2;
+}
+
+body {
+    background: #ffffff;
+}
+
+/* TOPO cabeçalho */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--roxo);
+    color: white;
+    padding: 15px 25px;
+}
+
+.logo {
+    font-size: 20px;
+    font-family: "Fugaz One", sans-serif;
+    color: #FFD921;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 18px;
+    padding: 2px 8px;          /* diminui a barra */
+    height: 25px;              /* altura menor */
+}
+
+.search-box input {
+    border: none;
+    padding: 0 6px;
+    outline: none;
+    font-size: 12px;           /* texto menor */
+    width: 220px;              /*o tamanho total */
+}
+
+.search-box button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-box .material-icons {
+    font-size: 18px;           /* ícone menor */
+    color: #555;
+}
+
+
+.menu-icones {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* espaço entre os ícones */
+}
+
+.menu-icones button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffff;
+}
+
+.menu-icones .material-icons {
+    font-size: 22px; /* deixa todos iguais */
+    cursor: pointer;
+}
+
+
+/* MENU LATERAL */
+#menu-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 230px;
+    height: 100%;
+    background: #ffffff;
+     box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transform: translateX(260px);
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-lateral ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#menu-lateral li {
+    padding: 12px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+#menu-lateral a {
+    padding: 12px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: black;
+}
+
+#menu-lateral li:hover {
+    color: var(--roxo);
+}
+
+#menu-lateral a:hover {
+    color: var(--roxo);
+}
+
+/* Versão ABERTA do menu */
+#menu-lateral.menu-aberto {
+    transform: translateX(0);        /* traz o menu para dentro */
+}
+
+/* Overlay */
+#menu-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 900;
+}
+
+/* Quando menu estiver aberto */
+#menu-overlay.ativo {
+    display: block;
+}
+
+.btn-notify {
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* OVERLAY (fundo escuro) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    z-index: 900;
+}
+
+.overlay.ativo {
+    display: block;
+}
+
+/*------PAINEL DE NOTIFICAÇÕES------*/
+
+.notificacao-lateral {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 320px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+    transition: right .3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.notificacao-lateral.aberta {
+    right: 0;
+}
+
+.notificacao-lateral h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #7b2cff;
+}
+/* CAIXAS DE NOTIFICAÇÃO */
+.notification {
+    background: #f3e8ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 10px;
+}
+
+.notification .time {
+    font-size: 10px;
+    color: #555;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .notificacao-lateral {
+        width: 100%;
+    }
+}
+
+/* PERFIS */
+.perfils {
+    padding: 20px;
+}
+
+
+/* STORIES */
+.icons {
+    display: flex;
+    gap: 20px;                   
+    padding: 10px 20px;
+    overflow-x: auto;            /* permite deslizar caso ultrapasse a tela */
+    scrollbar-width: none;       /* oculta barra no Firefox */
+}
+
+.icons::-webkit-scrollbar { 
+    display: none;               /* oculta barra no Chrome */
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #ff7a00, #ff007a, #7b2cff);
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.icon p {
+    margin-top: 3px;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* CATEGORIAS */
+.categoria h3 {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #833DE7;
+}
+.cat-cards {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    
+}
+
+.cat {
+    flex: 1;
+    text-align: center;
+    background: var(--claro);
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+}
+
+/* imagem pequena em cima */
+.cat img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.cat p {
+    font-size: 14px;
+}
+
+
+
+/* ---- FEED DE VIAGENS (GRID) ---- */
+
+.cards-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.feed-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Efeito hover */
+.feed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagens menores */
+.feed-card img {
+    width: 100%;
+    height: 160px;  /* <<< reduzido */
+    object-fit: cover;
+}
+
+.feed-info {
+    padding: 12px;
+}
+
+/* Área do usuário menor */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.user img {
+    width: 38px;   /* <<< reduzido */
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user h4 {
+    font-size: 12px; /* <<< menor */
+    margin: 0;
+}
+
+.user p {
+    font-size: 10px;
+    color: #666;
+}
+
+/* Descrição menor */
+.descricao {
+    font-size: 12px;
+    color: #444;
+    margin-top: 5px;
+    line-height: 1.3;
+}
+.hidden {
+    display: none;
+}
+
+
+/*footer*/
+.barra {
+  background-color: #833DE7;
+  width: 100%;
+  height: 6vmax;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  color: #7b2cff;
+  font-size: 1.1vmax;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.barra p{
+    color: #ffffff;
+}
+
+.ver-mais {
+    display: flex;
+    justify-content: center;
+    color: #833DE7;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
